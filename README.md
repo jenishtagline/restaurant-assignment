@@ -23,7 +23,7 @@ api's
 3) get all the restaurants -- 'restaurant/list'
 4) update restaurant data -- 'restaurant/update'
 5) create product for restaurant -- '/product/create'
-6) update product for restaurant -- '/product'
+6) update product for restaurant -- '/product/update'
 7) delete product for restaurant -- '/product/delete'
 
 We have uploded all the images in cloudinary so that you can see the images you are uploading for that you need to create account in cloudinary and create a folder name "restaurant"
