@@ -22,21 +22,10 @@ export class ProductService {
     try {
       const { name, price, category, restaurantId } = request.body
 
-      if (!name) {
-        return response.status(400).json({ msg: 'Please add product name' });
-      }
-
-      if (!price) {
-        return response.status(400).json({ msg: 'Please add product name' });
-      }
-
-      if (!category) {
-        return response.status(400).json({ msg: 'Please add product category' });
-      }
-
-      if (!restaurantId) {
-        return response.status(400).json({ msg: 'Please add restaurant id ' });
-      }
+      if (!name) return response.status(400).json({ msg: 'Please add product name' });
+      if (!price) return response.status(400).json({ msg: 'Please add product name' });
+      if (!category) return response.status(400).json({ msg: 'Please add product category' });
+      if (!restaurantId) return response.status(400).json({ msg: 'Please add restaurant id ' });
 
       const productData = {
         name,
@@ -70,15 +59,13 @@ export class ProductService {
     response: Response,
   ) {
     try {
+
       const { name, price, category, id } = request.body
 
-      if (!id) {
-        return response.status(400).json({ msg: 'Please add product id' });
-      }
+      if (!id)  return response.status(400).json({ msg: 'Please add product id' });
 
-      if (!ObjectId.isValid(id)) {
-        return response.status(400).json({ msg: 'Invalid restaurant id' });
-      }
+      if (!ObjectId.isValid(id)) return response.status(400).json({ msg: 'Invalid restaurant id' });
+     
 
       //Check for product details
       const productDetails = await this.productModel.findById(id).lean();
@@ -86,9 +73,7 @@ export class ProductService {
         return response.status(404).json({ msg: 'Product details not found' });
       }
 
-      if (!name) {
-        return response.status(400).json({ msg: 'Please add product name' });
-      }
+      if (!name)  return response.status(400).json({ msg: 'Please add product name' })
 
       if (price && (price !== '' || price !== undefined)) {
         return response.status(400).json({ msg: 'Please add product price' });
