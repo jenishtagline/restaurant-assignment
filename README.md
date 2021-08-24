@@ -30,6 +30,6 @@ We have uploded all the images in cloudinary so that you can see the images you 
 
 
 put your cloudinary secret credentials like
-Cloud Name:************
-API Key: 457398846646854
+Cloud Name:************,
+API Key: 457398846646854,
 API Secret:	***************************
